@@ -1,3 +1,2 @@
-<div>
-    projects.show
-</div>
+<x-project-card :$project />
+
