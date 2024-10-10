@@ -10,7 +10,7 @@ class Create extends Component
 {
     public Project $project;
 
-    public bool $modal = true;
+    public bool $modal = false;
 
     #[Rule(['required', 'email'])]
     public string $email = "";
@@ -34,6 +34,7 @@ class Create extends Component
             ['hours' => $this->hours]
         );
 
+        $this->dispatch('proposal::created');
         $this->modal = false;
     }
 
